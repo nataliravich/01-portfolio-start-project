@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "../../assets/icon/Icon";
+import { Icon } from "../icon/Icon";
 
 
 export const Logo = () => {
