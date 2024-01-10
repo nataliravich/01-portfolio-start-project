@@ -26,7 +26,6 @@ export const Main = () => {
 
 const StyledMain = styled.section`
 min-height: 100vh;
-background-color: #c2c491;
 display: flex;						/**чтоб секция по умолчанию растянулась на всю высоту экрана*/
 `
 
@@ -72,7 +71,7 @@ span {
 	&::before {								/**строчный элемент*/
 		content: "";						/**всегда указываем*/
 		display: inline - block;			/**у строчного элемента не бывает высоты, а нам надо, следовательно меняем отображение*/
-		width: 100 %;						/**на всю ширину родителя*/
+		width: 100%;						/**на всю ширину родителя*/
 		height: 20px;						/**взяли из Figma*/
 		background-color: ${theme.colors.accent};			/**взяли из глобальных стилей*/
 
