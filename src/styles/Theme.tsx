@@ -9,6 +9,11 @@ export const theme = {
 
 		borderColor: "#4A4A4A",
 		placeholderColor: "#495057"
+	}, 										/**обязательно запятая*/
 
+	media: {									/**без @*/
+		tablet: "screen and (max-width: 768px)",		/**для планшетов*/
+		mobile: "screen and (max-width: 576px)"		/**для мобильников*/
 	}
+
 }
