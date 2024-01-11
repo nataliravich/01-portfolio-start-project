@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
+import { theme } from "../../styles/Theme";
 
 export const Slider = () => {
 	return (
@@ -13,7 +14,7 @@ export const Slider = () => {
 			</FlexWrapper>
 			<Pagination>
 				<span> </span>
-				<span> </span>
+				<span className={"active"}> </span>
 				<span> </span>
 			</Pagination>
 		</StyledSlider >
@@ -32,21 +33,36 @@ const Slide = styled.div`
 		text-align: center;
 `
 
-const Text = styled.p`
+const Text = styled.p`		/**стиллизован в глобальных стилях*/
 	
 `
 
 const Name = styled.span`
-	
+font-family: 'Josefin Sans', sans-serif;
+font-size: 16px;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin: 22px 0 42px;			/**top и bottom не будет работать, тк span*/
+display: inline-block; 		/**чтоб работали margin, меняем вид*/
 `
 
-const Pagination = styled.div`
+const Pagination = styled.div`		/**буллиты слайдера*/
 	span {
 		display: inline-block;
-		width: 10px;
-		height: 10px;
-		margin: 5px;
-		background-color: #5a0a5d;
+		width: 7px;
+		height: 7px;
+		background-color: rgba(255, 255, 255, 0.5);
+		border-radius: 20px;
+
+		& + span {			/**для всех span, кот будут идти после span отступ слева*/
+			margin-left: 5px;
+		}
+
+		&.active {			/**активный буллит*/
+			background-color: ${theme.colors.accent};
+			width: 20px;
+		}
 	}
 `
 

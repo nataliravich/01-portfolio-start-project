@@ -27,10 +27,10 @@ const StyledSkill = styled.div`
 width: 380px;
 padding: 62px 20px 40px;				/**Отступы внутри каждой карточки до контента*/
 `
-const IconWrapper = styled.div`
+export const IconWrapper = styled.div`		/**обертка для иконки, чтоб сделать ромб*/
 	position: relative;					/**относительно него позиционируется ромб*/
 
-	&::before {								/**строчный элемент*/
+	&::before {								/**серый ромб, строчный элемент*/
 		content: "";						/**всегда указываем*/
 		display: inline - block;		/**у строчного элемента не бывает высоты, а нам надо, следовательно меняем отображение*/
 		width: 80px;						/**взяли из Figma*/
