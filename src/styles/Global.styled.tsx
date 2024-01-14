@@ -45,6 +45,9 @@ button {
 
 section {
 	padding: 100px 0;
+	@media ${theme.media.mobile} {		/**если нет макета для планшета, то пишут для моб, тк отступы десктопа~отст. моб*/
+		padding: 80px 0;
+	}
 }
 
 section:nth-of-type(odd) {

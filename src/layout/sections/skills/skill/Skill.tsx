@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "../../../../components/icon/Icon";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
+import { theme } from "../../../../styles/Theme";
 
 type SkillPropsType = {
 	iconId: string
@@ -24,11 +25,15 @@ export const Skill = (props: SkillPropsType) => {
 };
 
 const StyledSkill = styled.div`
-width: 380px;
+width: 330px;								/**ширину переписали из моб макета, чтоб улучшить адаптив*/
+flex-grow: 1;								/**кажд скилл занимает все свободное пространство, соответств не прижимается к краям*/
 padding: 62px 20px 40px;				/**Отступы внутри каждой карточки до контента*/
+@media ${theme.media.mobile} {		/**Отступы на мобилке поменялись*/
+	padding: 62px 0 40px;
+}
 `
 export const IconWrapper = styled.div`		/**обертка для иконки, чтоб сделать ромб*/
-	position: relative;					/**относительно него позиционируется ромб*/
+	position: relative;					/**относительно IconWrapper позиционируется ромб*/
 
 	&::before {								/**серый ромб, строчный элемент*/
 		content: "";						/**всегда указываем*/
