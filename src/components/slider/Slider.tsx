@@ -43,7 +43,7 @@ font-size: 16px;
 font-weight: 600;
 letter-spacing: 1px;
 text-transform: uppercase;
-margin: 22px 0 42px;			/**top и bottom не будет работать, тк span*/
+margin: 22px 0 32px;			/**top и bottom не будет работать, тк span*/
 display: inline-block; 		/**чтоб работали margin, меняем вид*/
 `
 

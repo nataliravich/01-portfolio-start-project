@@ -27,7 +27,7 @@ export const Skill = (props: SkillPropsType) => {
 const StyledSkill = styled.div`
 width: 330px;								/**ширину переписали из моб макета, чтоб улучшить адаптив*/
 flex-grow: 1;								/**кажд скилл занимает все свободное пространство, соответств не прижимается к краям*/
-padding: 62px 20px 40px;				/**Отступы внутри каждой карточки до контента*/
+padding: 42px 20px 52px;				/**Отступы внутри каждой карточки до контента*/
 @media ${theme.media.mobile} {		/**Отступы на мобилке поменялись*/
 	padding: 62px 0 40px;
 }

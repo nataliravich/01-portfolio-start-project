@@ -28,6 +28,6 @@ const StyledTestimony = styled.section`
 min-height: 50vh;
 
 ${IconWrapper} {					/*сам exportирован из Skill.tsx, но в этой секции есть отступы*/
-	margin: 40px 0 72px;
+	margin: 28px 0 72px;
 }
 `
