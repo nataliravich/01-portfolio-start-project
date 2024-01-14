@@ -29,8 +29,9 @@ export const Work = (props: WorkPropsType) => {
 
 const StyledWork = styled.div`
 background-color: ${theme.colors.secondaryBg};
-width: 100%;
-max-width: 540px;
+width: 330px;						/**ширина для мобилки, + точка после которой происходит скидывание*/
+//max-width: 540px;					/**ширина для десктопа*/
+flex-grow: 1;						/**возможность занимать все свободное пространство, что дает резиновость*/
 
 ${Link} {						/**внутри StyledWork есть стилизованная компонента {Link}, кот именно здесь с особенностями*/
 	padding: 10px 0;			/**размер линии =ссылка+паддинги. паддинг=0, линия не выступает за слово ссылки*/
@@ -39,12 +40,15 @@ ${Link} {						/**внутри StyledWork есть стилизованная к
 		margin-left: 20px;	/**отступ между ссылками: если у тебя есть слева Link, то у тебя отступ*/
 	}
 }
+
+@media ${theme.media.desktop} {
+	max-width: 540px;					/**ограничение ширины для десктопа только на заданном брейкпоинте*/
+}
 `
 
 const ImagWrapper = styled.div`
 	position: relative;
 
-	&:hover {									/**все происходит при ховер*/
 	&::before {									/**блюр на картинку, строчный элемент*/
 		content: "";							/**всегда указываем*/
 		position: absolute;					/**относительно PhotoWrapper*/
@@ -53,13 +57,9 @@ const ImagWrapper = styled.div`
 		right: 0;
 		left: 0;	
 		background: rgba(0, 0, 0, 0.30); 	/**из Figma*/
-		backdrop-filter: blur(4px);			/**из Figma*/			
+		backdrop-filter: blur(4px);			/**из Figma*/		
+		opacity: 0;								/**спрятали блюр*/			
 	}
-
-	${Button} {				/**поведение стилизованной компоненты только в этой секции на ховер*/
-		opacity: 1;			/**кнопка появляется на картинке при наведении*/
-	}
-}
 
 	${Button} {					/**поведение стилизованной компоненты только в этой секции*/
 		opacity: 0;				/**спрятали кнопку*/
@@ -73,6 +73,24 @@ const ImagWrapper = styled.div`
 			height: 100%;
 		}
 	}
+
+	&:hover {								/**все происходит при ховер*/
+	&::before {								/**блюр появляется на картинке при ховере*/	
+		opacity: 1;		
+	}	
+	${Button} {				/**поведение стилизованной компоненты только в этой секции на ховер*/
+		opacity: 1;			/**кнопка появляется на картинке при наведениимна ховер*/
+	}
+}
+
+@media ${theme.media.tablet} {
+	&::before {								/**блюр виден на картинке постоянно на планшете и моб*/	
+		opacity: 1;		
+	}	
+	${Button} {			
+		opacity: 1;			/**кнопка появляется на картинке постоянно на планшете и моб*/
+	}
+}
 `
 
 const Image = styled.img`
