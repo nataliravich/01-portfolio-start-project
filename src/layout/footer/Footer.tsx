@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { theme } from "../../styles/Theme";
+import { font } from "../../styles/Common";
 
 export const Footer = () => {
 	return (
@@ -43,9 +44,10 @@ padding: 40px 0;
 `
 
 const Name = styled.span`
-font-family: "Josefin Sans", sans-serif;
-font-size: 22px;
-font-weight: 700;
+${font({ family: "'Josefin Sans', sans-serif", weight: 700, Fmax: 22, Fmin: 16 })}		/**!обязательно кавычки для шрифтов, с помощью миксина передаем закомментированные свойства для десктопа + минимальный шрифт для мобилки*/
+//font-family: "Josefin Sans", sans-serif;
+//font-size: 22px;
+//font-weight: 700;
 letter-spacing: 3px;
 `
 
