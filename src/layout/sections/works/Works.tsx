@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { TabMenu } from "./tabMenu/TabMenu";
 import { FlexWrapper } from "../../../components/FlexWrapper";
@@ -7,30 +6,41 @@ import { Work } from "./work/Work";
 import socialImg from './../../../assets/images/proj-1.png'
 import timerImg from "./../../../assets/images/proj-2.png"
 import { Container } from "../../../components/Container";
+import { S } from "./Works_Styles";
 
 const worksItems = ["All", "landing page", "React", "spa"]
 
-export const Works = () => {
+const worksData = [
+	{
+		title: "Social Network",
+		src: socialImg,
+		text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+	},
+
+	{
+		title: "Timer",
+		src: timerImg,
+		text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim."
+	}
+]
+
+export const Works: React.FC = () => {
 	return (
-		<StyledWorks>
+		<S.Works>
 			<Container>
 				<SectionTitle>My Works</SectionTitle>
 				<TabMenu menuItems={worksItems} />
 				<FlexWrapper justify={"space-between"} align={"flex-start"} wrap={"wrap"}>  {/**wrap заставляет карточки скидываться */}
-					<Work title={"Social Network"}
-						src={socialImg}
-						text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."} />
-					<Work title={"Timer"}
-						src={timerImg}
-						text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim"} />
+
+					{worksData.map((w, index) => {
+						return <Work title={w.title} key={index}
+							src={w.src}
+							text={w.text} />
+					})}
+
 				</FlexWrapper>
 			</Container>
-		</StyledWorks>
+		</S.Works>
 	);
 };
 
-const StyledWorks = styled.section`
-${FlexWrapper} {
-	gap: 30px;				/**в данном случ, тк justify={"space-between"}, gap= мин отступ между эл-ми + margin между блоками в мобилке*/
-}
-`
