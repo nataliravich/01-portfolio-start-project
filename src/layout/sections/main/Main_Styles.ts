@@ -51,6 +51,9 @@ const MainTitle = styled.h1`
 ${font({ weight: 400, Fmax: 27, Fmin: 20 })}		/**с помощью миксина передаем закомментированные свойства для десктопа + минимальный шрифт для мобилки*/
 //font-size: 27px;
 //font-weight: 400;
+p {															/**спрятанный заголовок для SEO */
+	display: none;
+}
 `
 
 const Name = styled.h2`
