@@ -5,6 +5,7 @@ import { theme } from "../../styles/Theme"
 const Slider = styled.div`
 	border: 1px solid red;
 	max-width: 500px;
+	width: 100%;				/**добавили, чтоб слайдер не глючил */
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -28,7 +29,7 @@ margin: 22px 0 32px;			/**top и bottom не будет работать, тк s
 display: inline-block; 		/**чтоб работали margin, меняем вид*/
 `
 
-const Pagination = styled.div`		/**буллиты слайдера*/
+const Pagination = styled.div`		/**буллиты слайдера, можно удалять*/
 	span {
 		display: inline-block;
 		width: 7px;

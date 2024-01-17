@@ -1,0 +1,27 @@
+.alice-carousel__dots {
+margin: 0;							/*обнулили отступы для буллитов*/
+}
+
+.alice-carousel__dots-item:not(.__custom) {				/*стили для неактивного буллита*/
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+}
+
+.alice-carousel__dots-item:not(.__custom):not(:last-child) {        /*размер отступа для буллитов кроме последнего ребенка и .__custom)*/
+	margin-right: 5px;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover {
+	background-color: #7572D5;							/*переменные в .css работать не будут, поэтому прописываем цвет из темы*/
+}
+
+
+.alice-carousel__dots-item:not(.__custom).__active {
+	background-color: #7572D5;							/*переменные в .css работать не будут, поэтому прописываем цвет из темы*/
+	width: 20px;
+}
+
