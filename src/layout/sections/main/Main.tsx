@@ -9,7 +9,7 @@ import Tilt from 'react-parallax-tilt';
 
 export const Main: React.FC = () => {			/**сделали функциональной компонентой*/
 	return (
-		<S.Main >
+		<S.Main id={"home"} >
 			<Container>
 				<FlexWrapper align={"center"} justify={"space-around"} wrap={"wrap"}>		{/**сейчас они в строку, но могут скидываться, потому что wrap*/}
 					<div>

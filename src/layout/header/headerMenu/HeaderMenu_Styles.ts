@@ -1,13 +1,10 @@
 import styled, { css } from "styled-components"
 import { theme } from "../../../styles/Theme"
+import { Link } from "react-scroll"
 
 //Menu
-const Link = styled.a`
-text-align: center;
-font-family: 'Josefin Sans', sans-serif;
-font-size: 30px;
-font-weight: 400;
-color: transparent;						/**прозрачный цвет для item, без которого схлопнется меню*/
+const MenuItem = styled.li`
+position: relative;						/**относительно li мы будем располагать наших 2 масочных элемента*/
 `
 
 const Mask = styled.span`				/**можно div*/
@@ -30,8 +27,12 @@ color: ${theme.colors.accent};		/**из глобальных стилей*/
 }
 `
 
-const MenuItem = styled.li`
-position: relative;						/**относительно li мы будем располагать наших 2 масочных элемента*/
+const NavLink = styled(Link)`			/**на базе { Link } from "react-scroll" */
+text-align: center;
+font-family: 'Josefin Sans', sans-serif;
+font-size: 30px;
+font-weight: 400;
+color: transparent;						/**прозрачный цвет для item, без которого схлопнется меню*/
 
 &::before {						/**строчный элемент*/
 	content: "";				/**всегда указываем*/
@@ -48,7 +49,7 @@ position: relative;						/**относительно li мы будем расп
 	transform: scale(0);			/**псевдоэлемент не виден*/
 }
 
-&:hover {
+&:hover, &.active {
 	&::before {
 		transform: scale(1);		/**псевдоэлемент появляется на hover*/
 	}	
@@ -156,7 +157,7 @@ const DesktopMenu = styled.nav`
 `
 
 export const S = {   /**S - объект, в кот сидят все компоненты для Header через запятую */
-	Link,
+	NavLink,
 	Mask,
 	MenuItem,
 	MobileMenu,
