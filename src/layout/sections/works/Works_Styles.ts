@@ -6,6 +6,7 @@ import { Button } from "../../../components/Button";
 
 // Works
 const Works = styled.section`
+position: relative;
 ${FlexWrapper} {
 	gap: 30px;				/**в данном случ, тк justify={"space-between"}, gap= мин отступ между эл-ми + margin между блоками в мобилке*/
 }

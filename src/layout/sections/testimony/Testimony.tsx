@@ -27,6 +27,7 @@ export const Testimony: React.FC = () => {
 
 const StyledTestimony = styled.section`
 min-height: 50vh;
+position: relative;
 
 ${S.IconWrapper} {					/*сам exportирован из Skill.tsx, но в этой секции есть отступы*/
 	margin: 28px 0 72px;
