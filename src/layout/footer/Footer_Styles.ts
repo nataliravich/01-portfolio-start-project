@@ -28,7 +28,7 @@ const SocialItem = styled.li`
 
 const SocialLink = styled.a`							/**строчный элемент, не можем задавать W и H, из Figma при выделении группы*/
 border-radius: 50%;										/**вместо px 50% точно = круг*/
-background-color: rgba(255, 255, 255, 0.10);	/**добавили -color*/
+background-color: rgba(255, 255, 255, 0.10);		/**добавили -color*/
 width: 35px;												/**из Figma*/
 height: 35px;												/**из Figma*/
 display: flex;												/**простой способ выравнивания строчных элементов родители по центру + заработали W и H*/
@@ -36,6 +36,7 @@ justify-content: center;
 align-items: center;
 
 color: ${theme.colors.accent};						/**цвет для значка иконки*/
+transition: ${theme.animations.transition};		/**плавность для поднятия иконок*/
 
 &:hover {
 	color: ${theme.colors.primaryBG};				/**цвет для hover*/

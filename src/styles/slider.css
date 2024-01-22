@@ -6,6 +6,7 @@ margin: 0;							/*обнулили отступы для буллитов*/
 	display: inline-block;
 	width: 7px;
 	height: 7px;
+	transition: .2s ease-in-out;								/*плавность при изменении ширины с 7 до 20рх*/
 
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 20px;
@@ -22,6 +23,10 @@ margin: 0;							/*обнулили отступы для буллитов*/
 
 .alice-carousel__dots-item:not(.__custom).__active {
 	background-color: #7572D5;							/*переменные в .css работать не будут, поэтому прописываем цвет из темы*/
-	width: 20px;
+	width: 20px;		  										/*конечный размер активного буллита*/
 }
 
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {							/*пропала дополнительная прокрутка слайдера*/
+	display: none;
+}

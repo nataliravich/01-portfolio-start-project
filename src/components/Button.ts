@@ -23,7 +23,8 @@ z-index: 0;							/**текст выше заливки кнопки*/
 		display: inline - block;		/**у строчного элемента не бывает высоты, а нам надо, следовательно меняем отображение*/
 		width: 50%;							/**на 50% ширины родителя*/
 		height: 10px;						/**взяли из Figma*/
-		background-color: ${theme.colors.accent};		/**взяли из глобальных стилей*/
+		background-color: ${theme.colors.accent};			/**взяли из глобальных стилей*/
+		transition: ${theme.animations.transition};		/**плавность для кнопки */
 
 		position: absolute;				/**относительно Button*/
 		bottom: 0;
@@ -31,5 +32,4 @@ z-index: 0;							/**текст выше заливки кнопки*/
 		transform: translateX(-50%);	/**отодвинули вместе с left: 50%; в центр*/
 		z-index: -1;						/**заливка ниже текста на кнопке*/
 	}
-
 `

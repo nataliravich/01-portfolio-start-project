@@ -16,6 +16,7 @@ height: 50%;								/**50%, потому что это половина маск
 overflow-y: hidden;						/**прячим все, что в 50% не влазит*/
 //outline: 1px solid red;					/**временная граница, чтоб видеть наш элемент*/
 color: ${theme.colors.accent};		/**из глобальных стилей*/
+transition: ${theme.animations.transition};			/**плавность для переходов*/
 
 	& + & {					/**синтаксис SASS .. Амперсанд+амперсанд (&=ссылка на родительский селектор. Вместо него подставляется родитель) ..  + - для смежных селекторы, те для 2ого элемента действуют все свойства ниже*/
 	top: 50%;				/**у него паддинг будет 50%=верх будет на середине блочка ссылки*/
@@ -47,6 +48,7 @@ color: transparent;						/**прозрачный цвет для item, без к
 	z-index: 1;						/**чтобы была поверх*/
 
 	transform: scale(0);			/**псевдоэлемент не виден*/
+	transition: ${theme.animations.transition};			/**плавность для переходов*/
 }
 
 &:hover, &.active {
@@ -76,22 +78,28 @@ right: 0;
 left: 0;
 z-index: 9999;																/**над всеми окнами*/
 background-color: rgba(31, 31, 32, 0.90);
-display: none;
-
-${props => props.isOpen && css<{ isOpen: boolean }>`				/**действия для меню, если оно открыто*/
-	display: flex;																/**flexфми выровняли меню по центру экрана*/
-	justify-content: center;
-	align-items: center;
-`}
+display: flex;																/**flexами выровняли меню по центру экрана + 2 следующих свойства*/
+justify-content: center;
+align-items: center;
+transform: translateY(-100%);											/**спрятали меню за пределы элемента*/
+transition: 1s ease-in-out;															/**плавное выезжание меню*/
 
 	ul {											/**перенесли из StyledMobileMenu, тк теперь лежит в этой компоненте*/
 		display: flex;
 		flex-direction: column;				/**переписали меню на вертикальную*/
 		align-items: center;					/**выровняли по центру*/
 		justify-content: center;			/**выровняли по центру*/
-		gap: 30px;
-		
+		gap: 10px;								/**gap, когда меню прячется*/
+		transition: 1s ease-in-out;		/**плавное схлопывание меню*/
 	}
+
+${props => props.isOpen && css<{ isOpen: boolean }>`			/**действия для меню, если оно открыто, props указывают в самом конце*/
+transform: translateY(0);												/**если true, то показываем меню*/
+
+	& ul {
+		gap: 30px;									/**gap у открытой меню*/
+	}
+`}	
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`				/**ждет, что придет атрибут клик/нет*/

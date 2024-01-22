@@ -44,7 +44,8 @@ const ImagWrapper = styled.div`
 		left: 0;	
 		background: rgba(0, 0, 0, 0.30); 	/**из Figma*/
 		backdrop-filter: blur(4px);			/**из Figma*/		
-		opacity: 0;								/**спрятали блюр*/			
+		opacity: 0;								/**спрятали блюр*/	
+		transition: ${theme.animations.transition};		/**плавное появление блюра */
 	}
 
 	${Button} {					/**поведение стилизованной компоненты только в этой секции*/
@@ -52,7 +53,8 @@ const ImagWrapper = styled.div`
 		position: absolute;
 		left: 50%;				/**этот +3 пункта = кнопка по центру картинки*/
 		top: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -40%);			/**50%заменили на 40%, чтоб сделать эффект выезжающей кнопки, 2ч в hover */
+		transition: ${theme.animations.transition};		/**плавное появление кнопки на картинке */
 
 		&::before { 			/**кнопка без черты, полностью синяя, псевдоэлемент 100% у кнопки в этой секции на картинке*/
 			width: 100%;
@@ -66,6 +68,7 @@ const ImagWrapper = styled.div`
 	}	
 	${Button} {				/**поведение стилизованной компоненты только в этой секции на ховер*/
 		opacity: 1;			/**кнопка появляется на картинке при наведениимна ховер*/
+		transform: translate(-50%, -50%);			/**2ч анимации, чтоб эффект выезжающей кнопки*/
 	}
 }
 
