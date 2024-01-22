@@ -1,4 +1,5 @@
 import './App.css';
+import { GoTopBtn } from './components/goTopBtn/GoTopBtn';
 import { Particle } from './components/particle/Particle';
 import { Footer } from './layout/footer/Footer';
 import { Header } from './layout/header/Header';
@@ -21,6 +22,7 @@ function App() {
 			<Contact />
 			<Slogan />
 			<Footer />
+			<GoTopBtn />
 		</div>
 	);
 }
